@@ -1,0 +1,61 @@
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+#==========================================login==========================================#
+${nomor username}    xpath=/html/body/div[1]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input
+${nomor password}    xpath=/html/body/div[1]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input
+${button login}    xpath=/html/body/div[1]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button
+${menu PIM}    xpath=/html/body/div[1]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a
+${nama employee}    xpath=/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div/input
+${button search}    xpath=/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]
+${checkbox}    xpath=/html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div[1]/div/div/label/span
+${button hapus}    xpath=/html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div[9]/div/button[1]
+${button konfirmasi hapus}    xpath=/html/body/div[1]/div[3]/div/div/div/div[3]/button[2]
+
+*** Keywords ***
+#==========================================Steps login==========================================#
+
+Input username 
+    Wait Until Element Is Visible   ${nomor username}      10
+    Input Text    ${nomor username}    Admin
+
+Input password2
+    Wait Until Element Is Visible   ${nomor password}      10
+    Input Text    ${nomor password}    admin123
+
+Click button login
+    Wait Until Element Is Visible    ${buttonlogin}    10
+    Click Element    ${buttonlogin}
+
+Click menu PIM
+    Wait Until Element Is Visible    ${menu PIM}    10
+    Click Element    ${menu PIM}
+
+Input nama employee
+    Wait Until Element Is Visible   ${nama employee}      10
+    Input Text    ${nama employee}    orange
+
+Input nama employee salah
+    Wait Until Element Is Visible   ${nama employee}      10
+    Input Text    ${nama employee}    alicecccccccccccc
+
+Click button search
+    Wait Until Element Is Visible    ${button search}    10
+    Click Element    ${button search}
+
+Click checkbox
+    Wait Until Element Is Visible    ${checkbox}    10
+    Click Element    ${checkbox}
+
+Click button hapus
+    Wait Until Element Is Visible    ${button hapus}    10
+    Click Element    ${button hapus}
+
+Click button konfirmasi hapus
+    Wait Until Element Is Visible    ${button konfirmasi hapus}    10
+    Click Element    ${button konfirmasi hapus}
+
+
+    
+    
